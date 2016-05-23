@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Audio</title>
+    <style>
+        #adc_1, #adc_1 audio {
+            width: 100%;
+            max-width: 320px;
+        }
+        #adc_1 {
+            margin: 0 auto;
+        }
+        #adc_1 audio {
+            height: auto;
+        }
+        #adc_1 object {
+            width: 320px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="adc_1" class="adc-audio">
+    <audio id="adc_1_audio" src="./audio.mp3" controls="controls" preload="auto" autobuffer>
+	<source src="./audio.mp3" type="audio/mp3" />
+	<object id="adc_1_object" data="./audio.mp3">
+		<param name="allowFullScreen" value="true" />
+		<param name="allowscriptaccess" value="always" />
+		<param name="src" value="./audio.mp3" />
+		<param name="allowfullscreen" value="true" />
+		<param name="type" value="audio/mpeg" />
+		<param name="autostart" value="false" />
+        <param name="ShowControls" value="true" />
+		<a href="./audio.mp3">Try this page in a modern browser! Or you can download the audio file instead.</a>
+	</object>
+	</audio>
+</div>
+
+</body>
+</html>
