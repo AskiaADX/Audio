@@ -1,24 +1,30 @@
 {%
 Dim controlAlign
 If (CurrentADC.PropValue("controlAlign") = "center" ) Then
-    controlAlign = "0 auto"
+    controlAlign = "10px auto"
 ElseIf (CurrentADC.PropValue("controlAlign") = "right" ) Then
-    controlAlign = "0 0 0 auto"
+    controlAlign = "10px 0 10px auto"
 Else
-    controlAlign = "0 auto 0 0"
+    controlAlign = "10px auto 10px 0"
 EndIf
 %}
 #adc_{%= CurrentADC.InstanceId %}, #adc_{%= CurrentADC.InstanceId %} audio {
     width: 100%;
     max-width: {%:= CurrentADC.PropValue("width")%};
 }
-#adc_{%= CurrentADC.InstanceId %} {
+#adc_{%= CurrentADC.InstanceId %}, #adc_{%= CurrentADC.InstanceId %}_play {
     margin: {%= controlAlign %};
+    /*padding: 20px 0;*/
 }
 #adc_{%= CurrentADC.InstanceId %} audio {
     height: auto;
+    min-height: 40px;
 }
 #adc_{%= CurrentADC.InstanceId %} object {
     width: {%:= CurrentADC.PropValue("width")%};
+    height: 50px;
+}
+#adc_{%= CurrentADC.InstanceId %}_play {
+    width: 50px;
     height: 50px;
 }

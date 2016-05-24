@@ -10,8 +10,8 @@ Dim controls = On(CurrentADC.PropValue("controls") = "true", "controls=\"control
 {% If (CurrentADC.PropValue("path").ToString().Right(3).ToLowerCase() = "mp3") Then %}
 <div id="adc_{%= CurrentADC.InstanceId %}" class="adc-audio">
     <audio id="adc_{%= CurrentADC.InstanceId %}_audio" src="{%:= CurrentADC.PropValue("path") %}" {%:= controls %} {%:= autoplay %} preload="auto" autobuffer>
-	<source src="{%:= CurrentADC.PropValue("path") %}" type="audio/mp3" />
-        <object id="adc_{%= CurrentADC.InstanceId %}_object" data="{%:= CurrentADC.PropValue("path") %}">
+	<source src="{%:= CurrentADC.PropValue("path") %}" type="audio/mpeg" />
+    <object id="adc_{%= CurrentADC.InstanceId %}_object" data="{%:= CurrentADC.PropValue("path") %}">
 		<param name="allowFullScreen" value="true" />
 		<param name="allowscriptaccess" value="always" />
 		<param name="src" value="{%:= CurrentADC.PropValue("path") %}" />
@@ -22,5 +22,8 @@ Dim controls = On(CurrentADC.PropValue("controls") = "true", "controls=\"control
 		<a href="{%:= CurrentADC.PropValue("path") %}">{%:= CurrentADC.PropValue("textFallback") %}</a>
 	</object>
 	</audio>
+    {% If (CurrentADC.PropValue("controls") = "false" and ((Browser.Mobile = true) or (Browser.UserAgent.IndexOf("iPad") >= 1) or (Browser.UserAgent.IndexOf("iPod") >= 1) or (Browser.UserAgent.IndexOf("iPhone") >= 1) or (Browser.UserAgent.IndexOf("Android") >= 1) )) Then %}
+    <img id="adc_{%= CurrentADC.InstanceId %}_play" src="{%:= CurrentADC.URLTo("static/play.png") %}" />
+    {% EndIf %}
 </div>
 {% EndIf %}

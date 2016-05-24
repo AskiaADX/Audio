@@ -32,6 +32,7 @@
       <content fileName="default.html" type="html" mode="dynamic" position="placeholder" />
       <content fileName="adc-audio.js" type="javascript" mode="static" position="foot" />
       <content fileName="Initializer.js" type="javascript" mode="dynamic" position="foot" />
+      <content fileName="play.png" type="image" mode="static" position="none" />
     </output>
     <output id="fallback">
       <description><![CDATA[fallback javascript not supported]]></description>
