@@ -22,7 +22,7 @@ Dim controls = On(CurrentADC.PropValue("controls") = "true", "controls=\"control
 		<a href="{%:= CurrentADC.PropValue("path") %}">{%:= CurrentADC.PropValue("textFallback") %}</a>
 	</object>
 	</audio>
-    {% If (CurrentADC.PropValue("controls") = "false" and ((Browser.Mobile = true) or (Browser.UserAgent.IndexOf("iPad") >= 1) or (Browser.UserAgent.IndexOf("iPod") >= 1) or (Browser.UserAgent.IndexOf("iPhone") >= 1) or (Browser.UserAgent.IndexOf("Android") >= 1) )) Then %}
+    {% If (CurrentADC.PropValue("controls") = "false" and ((Browser.Mobile = true) or (Browser.UserAgent.IndexOf("iPad") >= 1) or (Browser.UserAgent.IndexOf("iPod") >= 1) or (Browser.UserAgent.IndexOf("iPhone") >= 1) or (Browser.UserAgent.IndexOf("Android") >= 1) or (Browser.UserAgent.IndexOf("IEMobile") >= 1) )) Then %}
     <img id="adc_{%= CurrentADC.InstanceId %}_play" src="{%:= CurrentADC.URLTo("static/play.png") %}" />
     {% EndIf %}
 </div>
