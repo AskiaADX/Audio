@@ -9,22 +9,22 @@ Else
 EndIf
 %}
 #adc_{%= CurrentADC.InstanceId %}, #adc_{%= CurrentADC.InstanceId %} audio {
-    width: 100%;
+    width    : 100%;
     max-width: {%:= CurrentADC.PropValue("width")%};
 }
 #adc_{%= CurrentADC.InstanceId %}, #adc_{%= CurrentADC.InstanceId %}_play {
-    margin: {%= controlAlign %};
+    margin   : {% = controlAlign %};
     /*padding: 20px 0;*/
 }
 #adc_{%= CurrentADC.InstanceId %} audio {
-    height: auto;
+    height    : auto;
     min-height: 40px;
 }
 #adc_{%= CurrentADC.InstanceId %} object {
-    width: {%:= CurrentADC.PropValue("width")%};
+    width : {%: = CurrentADC.PropValue("width")%};
     height: 50px;
 }
 #adc_{%= CurrentADC.InstanceId %}_play {
-    width: 50px;
+    width : 50px;
     height: 50px;
 }
