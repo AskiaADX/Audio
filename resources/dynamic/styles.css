@@ -13,7 +13,7 @@ EndIf
     max-width: {%:= CurrentADC.PropValue("width")%};
 }
 #adc_{%= CurrentADC.InstanceId %}, #adc_{%= CurrentADC.InstanceId %}_play {
-    margin   : {% = controlAlign %};
+    margin   : {%= controlAlign %};
     /*padding: 20px 0;*/
 }
 #adc_{%= CurrentADC.InstanceId %} audio {
@@ -21,7 +21,7 @@ EndIf
     min-height: 40px;
 }
 #adc_{%= CurrentADC.InstanceId %} object {
-    width : {%: = CurrentADC.PropValue("width")%};
+    width : {%:= CurrentADC.PropValue("width")%};
     height: 50px;
 }
 #adc_{%= CurrentADC.InstanceId %}_play {

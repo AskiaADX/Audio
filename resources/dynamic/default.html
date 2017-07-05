@@ -9,7 +9,7 @@ Dim controls = On(CurrentADC.PropValue("controls") = "true", "controls=\"control
 {% EndIf %}
 {% If (CurrentADC.PropValue("path").ToString().Right(3).ToLowerCase() = "mp3") Then %}
 <div id="adc_{%= CurrentADC.InstanceId %}" class="adc-audio">
-    <audio id="adc_{%= CurrentADC.InstanceId %}_audio" src="{%:= CurrentADC.PropValue("path") %}" {%:= controls %} {%:= autoplay %} preload="auto" autobuffer>
+    <audio id="adc_{%= CurrentADC.InstanceId %}_audio" src="{%:= CurrentADC.PropValue("path") %}" {%:= controls %} {%:= autoplay %} preload="auto" autobuffer controlsList="nodownload">
 	<source src="{%:= CurrentADC.PropValue("path") %}" type="audio/mpeg" />
     <object id="adc_{%= CurrentADC.InstanceId %}_object" data="{%:= CurrentADC.PropValue("path") %}">
 		<param name="allowFullScreen" value="true" />
