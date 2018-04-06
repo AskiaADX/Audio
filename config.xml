@@ -7,7 +7,7 @@
   <info>
     <name>Audio</name>
     <guid>4d45f0b3-e676-461d-bc51-5f460fa6d784</guid>
-    <version>2.0.0</version>
+    <version>2.0.1</version>
     <date>2016-05-23</date>
     <description><![CDATA[Insert mp3 audio file]]></description>
     <company>Askia</company>
@@ -18,7 +18,7 @@
       <category>General</category>
     </categories>
     <constraints>
-      <constraint on="questions" chapter="true" single="false" multiple="false" numeric="false" date="false" open="false" requireParentLoop="false" />
+      <constraint on="questions" chapter="true" single="true" multiple="true" numeric="true" date="true" open="true" requireParentLoop="false" />
       <constraint on="controls" responseblock="false" label="true" textbox="false" checkbox="false" listbox="false" radiobutton="false" />
       <constraint on="responses" max="*" min="*" />
     </constraints>
