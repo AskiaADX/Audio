@@ -18,7 +18,7 @@ EndIf
 }
 #adc_{%= CurrentADC.InstanceId %} audio {
     height    : auto;
-    min-height: 40px;
+    min-height: 60px;
 }
 #adc_{%= CurrentADC.InstanceId %} object {
     width : {%:= CurrentADC.PropValue("width")%};
