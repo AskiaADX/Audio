@@ -24,7 +24,7 @@
     </constraints>
   </info>
   <outputs defaultOutput="default">
-    <output id="default">
+    <output id="default" ManageLoopDepth="0">
       <description><![CDATA[Default output]]></description>
       <condition><![CDATA[Browser.Support("javascript")]]></condition>
       <content fileName="styles.css" type="css" mode="dynamic" position="head" />
@@ -33,7 +33,7 @@
       <content fileName="Initializer.js" type="javascript" mode="dynamic" position="foot" />
       <content fileName="play.png" type="image" mode="static" position="none" />
     </output>
-    <output id="fallback">
+    <output id="fallback" ManageLoopDepth="0">
       <description><![CDATA[fallback javascript not supported]]></description>
       <condition><![CDATA[Not(Browser.Support("javascript"))]]></condition>
       <content fileName="styles.css" type="css" mode="dynamic" position="head" />
