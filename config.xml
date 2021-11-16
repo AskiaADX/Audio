@@ -7,7 +7,7 @@
   <info>
     <name>Audio</name>
     <guid>4d45f0b3-e676-461d-bc51-5f460fa6d784</guid>
-    <version>3.0.0</version>
+    <version>4.0.0</version>
     <date>2016-05-23</date>
     <description><![CDATA[Insert mp3 audio file]]></description>
     <company>Askia</company>
@@ -42,9 +42,9 @@
   </outputs>
   <properties>
     <category id="General" name="General">
-      <property xsi:type="standardProperty" id="path" name="Path of the mp3 file" type="string" mode="dynamic" require="true" visible="true">
+      <property xsi:type="standardProperty" id="path" name="Path of the mp3 file" type="file" mode="dynamic" require="true" visible="true">
         <description><![CDATA[Path of the mp3 file]]></description>
-        <value><![CDATA[??ResPath??yourfile.mp3]]></value>
+        <value><![CDATA[]]></value>
       </property>
       <property xsi:type="standardProperty" id="width" name="Width" type="string" mode="dynamic" require="true" visible="true">
         <description><![CDATA[Width of the control]]></description>
