@@ -2,24 +2,24 @@
 Dim autoplay = On(CurrentADC.PropValue("autoplay") = "true", "autoplay=\"true\"", "")
 Dim controls = On(CurrentADC.PropValue("controls") = "true", "controls=\"controls\"", "")
 %}
-{% If (CurrentADC.PropValue("path").ToString().Right(3).ToLowerCase() <> "mp3") Then %}
+{% If (CurrentADC.Var("path").ToString().Right(3).ToLowerCase() <> "mp3") Then %}
 <div style="background:#FF0000;color:#FFFFFF;padding: 10px;font-weight:bold;text-align:center;">
     This control is compatible with mp3 file.
 </div>
 {% EndIf %}
-{% If (CurrentADC.PropValue("path").ToString().Right(3).ToLowerCase() = "mp3") Then %}
+{% If (CurrentADC.Var("path").ToString().Right(3).ToLowerCase() = "mp3") Then %}
 <div id="adc_{%= CurrentADC.InstanceId %}" class="adc-audio">
-    <audio id="adc_{%= CurrentADC.InstanceId %}_audio" src="{%:= CurrentADC.PropValue("path") %}" {%:= controls %} {%:= autoplay %} preload="auto" autobuffer controlsList="nodownload">
-	<source src="{%:= CurrentADC.PropValue("path") %}" type="audio/mpeg" />
-    <object id="adc_{%= CurrentADC.InstanceId %}_object" data="{%:= CurrentADC.PropValue("path") %}">
+    <audio id="adc_{%= CurrentADC.InstanceId %}_audio" src="{%:= CurrentADC.Var("path") %}" {%:= controls %} {%:= autoplay %} preload="auto" autobuffer controlsList="nodownload">
+	<source src="{%:= CurrentADC.Var("path") %}" type="audio/mpeg" />
+    <object id="adc_{%= CurrentADC.InstanceId %}_object" data="{%:= CurrentADC.Var("path") %}">
 		<param name="allowFullScreen" value="true" />
 		<param name="allowscriptaccess" value="always" />
-		<param name="src" value="{%:= CurrentADC.PropValue("path") %}" />
+        <param name="src" value="{%:= CurrentADC.Var("path") %}" />
 		<param name="allowfullscreen" value="true" />
 		<param name="type" value="audio/mpeg" />
         <param name="autostart" value="{%:= CurrentADC.PropValue("autoplay") %}" />
         <param name="ShowControls" value="{%:= CurrentADC.PropValue("controls") %}" />
-		<a href="{%:= CurrentADC.PropValue("path") %}">{%:= CurrentADC.PropValue("textFallback") %}</a>
+		<a href="{%:= CurrentADC.Var("path") %}">{%:= CurrentADC.PropValue("textFallback") %}</a>
 	</object>
 	</audio>
     {% If (CurrentADC.PropValue("controls") = "false" and ((Browser.Mobile = true) or (Browser.UserAgent.IndexOf("iPad") >= 1) or (Browser.UserAgent.IndexOf("iPod") >= 1) or (Browser.UserAgent.IndexOf("iPhone") >= 1) or (Browser.UserAgent.IndexOf("Android") >= 1) or (Browser.UserAgent.IndexOf("IEMobile") >= 1) )) Then %}
